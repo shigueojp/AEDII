@@ -29,8 +29,26 @@ bool removeAresta(int v1, int v2)
 {
 }
 
-void insereAresta(int v1, int v2, TipoPeso peso, TipoGrafo *grafo)
+void insereAresta(int v1, int v2, TipoPeso peso, TipoGrafo *g)
 {
+    if (existeAresta(v1, v2, g))
+    {
+        g->mat[v1][v2] = peso;
+        g->mat[v2][v1] = peso;
+    }
+    else
+    {
+        g->numArestas++;
+        g->mat[v1][v2] = peso;
+        g->mat[v2][v1] = peso;
+    }
+}
+
+bool existeAresta(int v1, int v2, TipoGrafo *g)
+{
+    if (g->mat[v1][v2] != AN || g->mat[v2][v1] != AN)
+        return true;
+    return false;
 }
 
 main()
