@@ -25,7 +25,16 @@ bool inicializaGrafo(TipoGrafo *grafo, int nv)
     }
 }
 
-main() {
+bool removeAresta(int v1, int v2)
+{
+}
+
+void insereAresta(int v1, int v2, TipoPeso peso, TipoGrafo *grafo)
+{
+}
+
+main()
+{
     printf("%d", true);
     getchar();
 }
